@@ -3,8 +3,6 @@ title:  GitHub Action
 ---
 
 
-<!--description-->
-
 # Master Repo和Slave Repo同步
 
 添加如下`push.yml`到`.github/workflows`，这个workflow会在push到`master`分支时触发push到另一个repo的`build`分支：
@@ -40,6 +38,8 @@ jobs:
 - 这个workflow的运行还有一个额外的条件：仅在`commit`消息内包含`"build please!"`字符串时才会运行，这样我们便可以很方便的控制编译频率，节省资源。
 - `shimataro/ssh-key-action@v2`是用来安装ssh相关文件到`~/.ssh`文件夹下，以实现之后的git操作。`KNOWN_HOSTS`是你要push的远程仓库的域名信息，可以通过`ssh-keyscan -t rsa ***.com`来查询得到。`SSH_KEY `则是`~/.ssh/id_rsa`文件的内容（以`-----BEGIN RSA PRIVATE KEY-----`开头）。
 - 最后是正常的git流程，添加远程repo地址（需要用git协议）>设置用户邮箱>强制push本地`master`分支到远程`build`分支。
+
+<!-- more -->
 
 # Slave Repo编译
 

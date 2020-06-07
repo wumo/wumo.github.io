@@ -2,8 +2,6 @@
 title:  Windows Terminal
 ---
 
-<!--description-->
-
 #配置
 ```json
 {
@@ -56,6 +54,8 @@ title:  Windows Terminal
     "keybindings": [ ]
 }
 ```
+<!-- more -->
+
 #最终效果展示
 ![image.png](https://upload-images.jianshu.io/upload_images/22109430-84a9b8ee7cce1354.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 

@@ -2,8 +2,6 @@
 title:  编译DiligentEngine：Ninja和Vulkan
 ---
 
-<!--description-->
-
 CMake Options:
 ```
 -G Ninja
@@ -43,3 +41,4 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
                  COMMAND ${CMAKE_COMMAND} -E copy_if_different
                      ${D3D_COMPILER_PATH}
 ```
+<!-- more -->

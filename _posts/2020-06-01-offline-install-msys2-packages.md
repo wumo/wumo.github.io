@@ -2,8 +2,6 @@
 title:  Offline Install Msys2 Packages
 ---
 
-<!--description-->
-
 # Install Msys2 with Internet
 
 You have to install msys2 and your needed packages first. Check [msys2.org]([https://www.msys2.org/](https://www.msys2.org/)
@@ -21,3 +19,5 @@ Replace `package_name1 package_name2 ...` with your needed packages.
 # Scoop support zstd
 
 [Support zstd for extraction](https://github.com/lukesampson/scoop/issues/3990)
+
+<!-- more -->
