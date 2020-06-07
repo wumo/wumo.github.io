@@ -6,7 +6,7 @@ Selenium可以通过特定的webdriver与主流浏览器进行程序化交互，
 
 使用Selenium需要下载对应浏览器的WebDriver，如Chrome需要[ChromeDriver](https://chromedriver.chromium.org/downloads)，FireFox需要[geckodriver](https://github.com/mozilla/geckodriver/releases)，而Edge浏览器也有对应的[webdriver](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/)。 WebDriver的版本需要与目标浏览器的版本兼容，否则出现无法启动或连接浏览器的错误。
 
-<!--description-->
+<!--more-->
 
 ## 使用Selenium进行自动化测试的步骤：
 
