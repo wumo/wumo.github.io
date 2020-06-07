@@ -372,14 +372,14 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-#baidu_analytics:
+baidu_analytics: 32c3111edfe4d3446dc17c822f85574d
 
 # Duoshuo ShortName
 #duoshuo_shortname:
 
 # Disqus
 disqus:
-  enable: false
+  enable: wumo
   shortname:
   count: true
   # hide comments (visitors need to click to load the comments)
@@ -546,7 +546,7 @@ busuanzi_count:
 
 
 # Tencent analytics ID
-# tencent_analytics:
+tencent_analytics: 66564453
 
 # Tencent MTA ID
 # tencent_mta:
@@ -585,7 +585,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
@@ -604,7 +604,7 @@ exturl: false
 #! ---------------------------------------------------------------
 
 # Motion
-use_motion: false
+use_motion: true
 
 # Fancybox
 fancybox: true
@@ -627,7 +627,8 @@ pace: true
 #pace-theme-minimal
 # For example
 # pace_theme: pace-theme-center-simple
-pace_theme: pace-theme-minimal
+# pace_theme: pace-theme-minimal
+pace_theme: pace-theme-mac-osx
 
 # Canvas-nest
 canvas_nest: false
