@@ -1,8 +1,7 @@
-+++
-title= "Git proxy and no_proxy setting (both working on Ubuntu/Windows)"
-date= "2017-04-28"
-tags= ["git"]
-+++
+---
+title:  "Git proxy and no_proxy setting (both working on Ubuntu/Windows)"
+tags:  ["git"]
+---
 <!--more-->
 ref [Only use a proxy for certain git urls/domains?](http://stackoverflow.com/a/16069911)
 

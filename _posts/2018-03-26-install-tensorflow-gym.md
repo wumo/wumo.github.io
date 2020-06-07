@@ -1,10 +1,9 @@
-+++
-title= "Install tensorflow and gym"
-date= "2018-03-26"
-tags= ["drl"]
-+++
+---
+title: "Install tensorflow and gym"
+tags: ["drl"]
+---
 
-<!--more-->
+
 # Prerequisite: 
 ### Install Ubuntu 16.04 with nvidia graphics card
 turn off BIOS Secure Boot and Fast Boot
@@ -27,7 +26,7 @@ sudo apt update
 sudo apt install nvidia-396 # should be the same as the bundled driver of cuda.
 nvidia-smi # check
 ```
-
+<!--more-->
 # Install cuDNN 7.2 for CUDA 9.2
 Download [cuDNN](https://developer.nvidia.com/cudnn).
 Install according to  [NVIDIA's documentation](https://docs.nvidia.com/deeplearning/sdk/cudnn-install/index.html):

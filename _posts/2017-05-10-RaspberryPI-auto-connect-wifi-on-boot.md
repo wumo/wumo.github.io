@@ -1,8 +1,7 @@
-+++
-title= "Raspberry PI auto connect wifi on boot"
-date= "2017-05-10"
-tags= ["raspberry pi","wifi"]
-+++
+---
+title:  "Raspberry PI auto connect wifi on boot"
+tags:  ["raspberry pi","wifi"]
+---
 <!--more-->
 
 modify `/etc/network/interfaces`:

@@ -1,5 +1,5 @@
 ---
-title= "Set Up IPsec VPN Server"
+title:  "Set Up IPsec VPN Server"
 tags:
 - vpn
 ---

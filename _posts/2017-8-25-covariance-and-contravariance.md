@@ -1,11 +1,10 @@
-+++
-title= "Covariance and Contravariance"
-date= "2017-08-17"
-tags= ["concurrency"]
-+++
+---
+title: "Covariance and Contravariance"
+tags: ["concurrency"]
+---
 Java的extends、Scala的+、Kotlin的out是协变，
 Java的super、Scala的-、Kotlin的in是逆变。
-<!--more-->
+
 # 背景
 定义继承结构
 ```scala
@@ -37,7 +36,7 @@ a.consume(d)//d为D类型，是B类型的子类，理应可以放入a中
 b.produce()//这时，如果调用b的produce()函数，那么应该将d抛出，但是d是D类型，与b定义的C类型不兼容，会产生CastException
 ```
 上面这样随意地按泛型类型的继承关系进行赋值的应用不应该被支持，但如果是一些限制性的使用方式，是应该被支持。
-
+<!--more-->
 # 协变
 如果泛型符号只在输出位置处使用（函数返回值），则可以扩展为协变泛型
 ```scala

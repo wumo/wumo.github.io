@@ -1,10 +1,9 @@
-+++
-title= "Let's Encrypt"
-date= "2019-09-29"
-tags= ["ca","Let's Encrypt","acme"]
-+++
+---
+title: "Let's Encrypt"
+tags: ["ca","Let's Encrypt","acme"]
+---
 Using acme to manage Let's Encrypt certificate.
-<!--more-->
+
 
 Install [<u>acme</u>](https://github.com/Neilpang/acme.sh).
 ```shell
@@ -26,3 +25,4 @@ sudo crontab -e
 32 0 * * * "/home/wumo/.acme.sh"/acme.sh --cron --home "/home/wumo/.acme.sh" >> /home/wumo/.acme.sh/cron.log 2>&1
 
 ```
+<!--more-->

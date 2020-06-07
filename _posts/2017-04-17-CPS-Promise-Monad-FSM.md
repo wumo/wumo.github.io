@@ -1,8 +1,7 @@
-+++
-title= "CPS Promise Monad FSM"
-date= "2017-04-17"
-tags= ["functional programming","monad","cps","promise","continuation"]
-+++
+---
+title:  "CPS Promise Monad FSM"
+tags:  ["functional programming","monad","cps","promise","continuation"]
+---
 
 
 <!--more-->

@@ -1,5 +1,5 @@
 ---
-title= "Shadowsocks的一些常见用法"
+title: "Shadowsocks的一些常见用法"
 tags:
 - shadowsocks
 ---

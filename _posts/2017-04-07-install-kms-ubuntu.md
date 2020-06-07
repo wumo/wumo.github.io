@@ -1,5 +1,5 @@
 ---
-title= "Install KMS on Ubuntu"
+title: "Install KMS on Ubuntu"
 tags: 
 - kms
 ---

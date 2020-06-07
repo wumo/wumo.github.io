@@ -1,5 +1,5 @@
 ---
-title= "Gradle Usage"
+title:  "Gradle Usage"
 tags:
 - gradle
 ---

@@ -1,9 +1,8 @@
-+++
-title= "Use newconan to create C/C++ projects"
-date= "2019-11-09"
-tags= ["c++","conan","newconan"]
-+++
-[<u>`newconan`</u>](https://gitlab.com/wumo/newconan) creates default project structure that is convenient for developing in IDEs like Clion and Visual Studio.<!--more-->
+---
+title: "Use newconan to create C/C++ projects"
+tags: ["c++","conan","newconan"]
+---
+[newconan](https://gitlab.com/wumo/newconan) creates default project structure that is convenient for developing in IDEs like Clion and Visual Studio.<!--more-->
 
 ## Installation
 ```shell
@@ -71,3 +70,5 @@ class ProjectNameConan(ConanFile):
     ) 
 ```
 And then refresh `cmake`, `conan` will download and compile all the listed dependencies.
+
+<!--more-->

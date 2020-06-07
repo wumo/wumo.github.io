@@ -1,11 +1,8 @@
-+++
-title= "Custom Configuration for Alacritty "
-date= "2019-09-28"
-tags= ["terminal","windows 10","Alacritty"]
-+++
+---
+title: "Custom Configuration for Alacritty "
+tags: ["terminal","windows 10","Alacritty"]
+---
 Custom Configuration for Alacritty (Windows 10) 
-<!--more-->
-
 Install [Alacritty](https://github.com/jwilm/alacritty).
 
 Launch PowerShell and edit `alacritty.yml`:
@@ -13,6 +10,8 @@ Launch PowerShell and edit `alacritty.yml`:
 cd $env:APPDATA\alacritty\
 code alacritty.yml # use your favourite editor (here is vscode)
 ```
+<!--more-->
+
 # Color
 Modify `alacritty.yml` as following to customize color (ANSI X3.64 color):
 ```yaml

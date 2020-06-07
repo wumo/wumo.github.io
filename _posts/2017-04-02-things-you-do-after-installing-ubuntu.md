@@ -1,5 +1,5 @@
 ---
-title= "Things You Do After Installing Ubuntu"
+title: "Things You Do After Installing Ubuntu"
 tags:
 - ubuntu
 ---

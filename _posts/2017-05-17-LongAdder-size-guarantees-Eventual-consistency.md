@@ -1,9 +1,7 @@
-+++
-title= "LongAdder sum() last update thread will get correct sum"
-date= "2017-05-17"
-tags= ["concurrency"]
-+++
-<!--more-->
+---
+title: "LongAdder sum() last update thread will get correct sum"
+tags: ["concurrency"]
+---
 
 The javadoc for `LongAdder.sum()` is:
 ```java
@@ -30,3 +28,4 @@ The javadoc for `LongAdder.sum()` is:
 如果限制应用场景，仅有有限个线程进行有限次更新，那么最后一次更新（全局时间）的线程调用`LongAdder.sum()`将获得正确的sum。
 
 这个例子用来熟悉`volatile`和`happen-before`比较好。
+<!--more-->

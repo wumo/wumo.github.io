@@ -1,9 +1,8 @@
-+++
-title= "Clion Miscellaneous"
-date= "2019-10-15"
-tags= ["clion"]
-+++
-Clion Miscellaneous Things:<!--more-->
+---
+title: "Clion Miscellaneous"
+tags: ["clion"]
+---
+Clion Miscellaneous Things:
 
 # clion cannot find declaration to go to
 Help menu > Edit Custom Properties
@@ -11,3 +10,5 @@ Help menu > Edit Custom Properties
 # Maximum file size (kilobytes)
 idea.max.intellisense.filesize=2500
 ```
+
+<!--more-->

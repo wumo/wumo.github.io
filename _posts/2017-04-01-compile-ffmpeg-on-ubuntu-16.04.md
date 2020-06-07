@@ -1,5 +1,5 @@
 ---
-title = "Compile FFmpeg on Ubuntu 16.04"
+title: "Compile FFmpeg on Ubuntu 16.04"
 tags:
 - ffmpeg
 - ubuntu

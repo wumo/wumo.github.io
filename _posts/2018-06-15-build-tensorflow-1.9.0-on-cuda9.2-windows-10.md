@@ -1,8 +1,7 @@
-+++
-title= "Build Tensorflow 1.9.0 with CUDA 9.2 on Windows 10"
-date= "2018-06-15"
-tags= ["reinforcement learning"]
-+++
+---
+title: "Build Tensorflow 1.9.0 with CUDA 9.2 on Windows 10"
+tags: ["reinforcement learning"]
+---
 # Prerequisite
  * CUDA 9.2
  * CUDNN 7.1
@@ -43,6 +42,7 @@ cmake .. -G "Visual Studio 15 2017" -T v140 -A x64 -DCMAKE_BUILD_TYPE=Release -D
 ```
 cmake .. -G "Visual Studio 15 2017" -T v140 -A x64 -DCMAKE_BUILD_TYPE=Release -DSWIG_EXECUTABLE=C:\swigwin-3.0.12\swig.exe -DPYTHON_EXECUTABLE=C:\Users\WuMo-Zion\Miniconda3\python.exe -DPYTHON_LIBRARIES=C:\Users\WuMo-Zion\Miniconda3\libs\python36.lib -Dtensorflow_BUILD_SHARED_LIB=ON -Dtensorflow_WIN_CPU_SIMD_OPTIONS=/arch:AVX2
 ```
+<!--more-->
 # Build
 
 ```

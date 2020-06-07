@@ -1,9 +1,7 @@
-+++
-title= "精彩的Concurrent、Lock-free、Memory Order博客memo"
-date= "2017-05-17"
-tags= ["concurrent","lock-free","memory order"]
-+++
-<!--more-->
+---
+title:  "精彩的Concurrent、Lock-free、Memory Order博客memo"
+tags:  ["concurrent","lock-free","memory order"]
+---
  
 # [JSR166 Concurrency](http://jsr166-concurrency.10961.n7.nabble.com/) forum 
 * [Doug Lea's posts](http://jsr166-concurrency.10961.n7.nabble.com/template/NamlServlet.jtp?macro=user_nodes&user=23)
@@ -39,3 +37,5 @@ tags= ["concurrent","lock-free","memory order"]
 
 # Atomic weapon from Herb Sutter
 * [atomic Weapons: The C++ Memory Model and Modern Hardware](https://herbsutter.com/2013/02/11/atomic-weapons-the-c-memory-model-and-modern-hardware/)
+
+<!--more-->
