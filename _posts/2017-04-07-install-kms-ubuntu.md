@@ -47,6 +47,7 @@ PS C:\WINDOWS\system32> slmgr.vbs -skms kms.bcsytv.com
 PS C:\WINDOWS\system32> slmgr.vbs -ato
 PS C:\WINDOWS\system32> slmgr.vbs -dlv
 ```
+
 |version|key|
 |----|----|
 |Windows 10 Professional|W269N-WFGWX-YVC9B-4J6C9-T83GX|
