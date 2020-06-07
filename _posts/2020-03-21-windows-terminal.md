@@ -64,7 +64,7 @@ title:  Windows Terminal
 # 添加WindowsTerminal到右键菜单
 
 创建`install.cmd`文件，内容如下：
-```cmd
+```
 set menu_name=Windows Terminal
 set exe_path=C:\...\WindowsTerminalexe
 
@@ -78,7 +78,7 @@ reg add "HKCU\Software\Classes\LibraryFolder\Background\shell\%menu_name%" /v "I
 reg add "HKCU\Software\Classes\LibraryFolder\Background\shell\%menu_name%\command" /d "\"%exe_path%\" -d ." /f
 ```
 对应的`uninstall.cmd`文件，内容如下：
-```cmd
+```
 set menu_name=Windows Terminal
 
 reg delete "HKCU\Software\Classes\Directory\shell\%menu_name%" /f
