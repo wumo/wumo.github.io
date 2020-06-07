@@ -57,7 +57,7 @@ title:  Windows Terminal
 <!-- more -->
 
 #最终效果展示
-![image.png](/asset/images/wt.png)
+![image.png](images/wt.png)
 
 #添加WindowsTerminal到右键菜单
 创建`install.cmd`文件，内容如下：
