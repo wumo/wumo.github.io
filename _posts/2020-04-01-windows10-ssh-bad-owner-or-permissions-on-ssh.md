@@ -4,7 +4,7 @@ title:  Windows 10 SSH Bad owner or permissions on .ssh/config
 
 最近win10上ssh会出现`Bad owner or permissions on .ssh/config`错误，似乎是由于`config`文件权限不对，可是在尝试修改`.ssh`和`config`文件的所有权和权限后还是不行，最后尝试卸载win10自带的`openssh`客户端重新安装openssh官网的客户端后问题解决了。
 
-<!--description-->
+<!--more-->
 
 # OpenSSH 卸载
 

@@ -39,7 +39,7 @@ jobs:
 - `shimataro/ssh-key-action@v2`是用来安装ssh相关文件到`~/.ssh`文件夹下，以实现之后的git操作。`KNOWN_HOSTS`是你要push的远程仓库的域名信息，可以通过`ssh-keyscan -t rsa ***.com`来查询得到。`SSH_KEY `则是`~/.ssh/id_rsa`文件的内容（以`-----BEGIN RSA PRIVATE KEY-----`开头）。
 - 最后是正常的git流程，添加远程repo地址（需要用git协议）>设置用户邮箱>强制push本地`master`分支到远程`build`分支。
 
-<!-- more -->
+<!--more-->
 
 # Slave Repo编译
 

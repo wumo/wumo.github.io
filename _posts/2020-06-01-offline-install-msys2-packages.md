@@ -20,4 +20,4 @@ Replace `package_name1 package_name2 ...` with your needed packages.
 
 [Support zstd for extraction](https://github.com/lukesampson/scoop/issues/3990)
 
-<!-- more -->
+<!--more-->

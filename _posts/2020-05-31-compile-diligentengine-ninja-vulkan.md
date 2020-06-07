@@ -13,6 +13,7 @@ CMake Options:
 这里禁用D3D是因为这个[issues](https://github.com/DiligentGraphics/DiligentCore/issues/127)。
 
 应用下面这个patch来消除`ninja $ error`：
+<!--more-->
 ```
 Index: BuildUtils.cmake
 IDEA additional info:
@@ -41,4 +42,3 @@ Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
                  COMMAND ${CMAKE_COMMAND} -E copy_if_different
                      ${D3D_COMPILER_PATH}
 ```
-<!-- more -->
