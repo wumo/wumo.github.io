@@ -2,7 +2,8 @@
 title:  Windows Terminal
 ---
 
-#配置
+# 配置
+
 ```json
 {
     "$schema": "https://aka.ms/terminal-profiles-schema",
@@ -56,10 +57,12 @@ title:  Windows Terminal
 ```
 <!-- more -->
 
-#最终效果展示
+# 最终效果展示
+
 ![image.png]({{ site.url }}/assets/images/wt.png)
 
-#添加WindowsTerminal到右键菜单
+# 添加WindowsTerminal到右键菜单
+
 创建`install.cmd`文件，内容如下：
 ```cmd
 set menu_name=Windows Terminal
