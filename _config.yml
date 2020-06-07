@@ -379,8 +379,8 @@ baidu_analytics: 32c3111edfe4d3446dc17c822f85574d
 
 # Disqus
 disqus:
-  enable: wumo
-  shortname:
+  enable: true
+  shortname: wumo
   count: true
   # hide comments (visitors need to click to load the comments)
   # count need to be false when hide is true
