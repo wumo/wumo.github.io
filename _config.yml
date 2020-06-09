@@ -379,7 +379,7 @@ baidu_analytics: 32c3111edfe4d3446dc17c822f85574d
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: wumo
   count: true
   # hide comments (visitors need to click to load the comments)
@@ -420,9 +420,9 @@ wildfire:
 
 # changyan
 changyan:
-  enable: false
-  appid:
-  appkey:
+  enable: true
+  appid: cyuSweQBL
+  appkey: prod_162207536b462e2f42f65b7d82537782
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
