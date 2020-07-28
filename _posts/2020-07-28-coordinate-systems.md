@@ -19,7 +19,7 @@ $$ \mathbf{p'} = \mathbf{T}\mathbf{p} $$
 
 令\\( \mathbf{f},\mathbf{s},\mathbf{u} \\)分别表示相机在世界坐标系下的前、右和上三个方向的单位向量，\\( \mathbf{L} \\)表示相机在世界坐标系的位置， \\( <\mathbf{s},\mathbf{u},-\mathbf{f}> \\)则组成了我们想要的坐标系，表示成矩阵则是：
 
-$$ \begin{bmatrix}
+$$ \mathbf{T} = \begin{bmatrix}
 \mathbf{s}_{x} & \mathbf{u}_{x} & -\mathbf{f}_{x} & 0 \\\\
 \mathbf{s}_{y} & \mathbf{u}_{y} & -\mathbf{f}_{y} & 0 \\\\
 \mathbf{s}_{z} & \mathbf{u}_{z} & -\mathbf{f}_{z} & 0 \\\\
@@ -28,7 +28,7 @@ $$ \begin{bmatrix}
 
 再加上相机的位置所需要的偏移，则最终的变换矩阵就是：
 
-$$ \begin{bmatrix}
+$$ \mathbf{T} = \begin{bmatrix}
 \mathbf{s}_{x} & \mathbf{u}_{x} & -\mathbf{f}_{x} & -\mathbf{L} \cdot \mathbf{s} \\\\
 \mathbf{s}_{y} & \mathbf{u}_{y} & -\mathbf{f}_{y} & -\mathbf{L} \cdot \mathbf{u} \\\\
 \mathbf{s}_{z} & \mathbf{u}_{z} & -\mathbf{f}_{z} & \mathbf{L} \cdot \mathbf{f} \\\\
