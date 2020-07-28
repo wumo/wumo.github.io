@@ -174,3 +174,6 @@ $$ \mathbf{T'} = \mathbf{T}\mathbf{S}
 0 & 0 & -\frac{f}{f-n} & -\frac{f \cdot n}{f-n} \\\\
 0 & 0 & -1 & 0
 \end{bmatrix} $$
+
+> 依据约定的不同可能需要重新计算相关坐标系下的各种变换矩阵。
+
