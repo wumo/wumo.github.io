@@ -201,38 +201,38 @@ w'
 
 点在Frustum内的条件：
 
-$$ \begin{multline}
+$$ \begin{gather}
   -1 \leq \frac{x'}{w'} \leq 1 \\\\
   -1 \leq \frac{y'}{w'} \leq 1 \\\\
   0 \leq \frac{z'}{w'} \leq 1
-\end{multline} $$
+\end{gather} $$
 
 将条件用向量积表示：
 
-$$ \begin{multline}
+$$ \begin{gather}
 -\mathbf{r}_{3} \cdot \mathbf{p} \leq \mathbf{r}_{0} \cdot \mathbf{p} \leq  \mathbf{r}_{3} \cdot \mathbf{p} \\\\
 -\mathbf{r}_{3} \cdot \mathbf{p} \leq \mathbf{r}_{1} \cdot \mathbf{p} \leq  \mathbf{r}_{3} \cdot \mathbf{p} \\\\
 0 \leq \mathbf{r}_{2} \cdot \mathbf{p} \leq  \mathbf{r}_{3} \cdot \mathbf{p}
-\end{multline} $$
+\end{gather} $$
 
 展开：
 
-$$ \begin{multline}
+$$ \begin{gather}
 (\mathbf{r}_{3} + \mathbf{r}_{0}) \cdot \mathbf{p} \geq 0 \\\\
 (\mathbf{r}_{3} - \mathbf{r}_{0}) \cdot \mathbf{p} \geq 0 \\\\
 (\mathbf{r}_{3} + \mathbf{r}_{1}) \cdot \mathbf{p} \geq 0 \\\\
 (\mathbf{r}_{3} - \mathbf{r}_{1}) \cdot \mathbf{p} \geq 0 \\\\
 \mathbf{r}_{2} \cdot \mathbf{p} \geq 0 \\\\
 (\mathbf{r}_{3} - \mathbf{r}_{2}) \cdot \mathbf{p} \geq 0 
-\end{multline} $$
+\end{gather} $$
 
 得到Plane:
 
-$$ \begin{multline}
+$$ \begin{gather}
 Left = \mathbf{r}_{3} + \mathbf{r}_{0} \\\\
 Right = \mathbf{r}_{3} - \mathbf{r}_{0} \\\\
 Bottom = \mathbf{r}_{3} + \mathbf{r}_{1} \\\\
 Top = \mathbf{r}_{3} - \mathbf{r}_{1} \\\\
 Near = \mathbf{r}_{2} \\\\
 Far = \mathbf{r}_{3} - \mathbf{r}_{2}
-\end{multline} $$
+\end{gather} $$
