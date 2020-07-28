@@ -180,7 +180,7 @@ $$ \mathbf{T'} = \mathbf{T}\mathbf{S}
 
 # Frustum Plane
 
-$$ \begin{bmatrix}
+$$ \mathbf{T}\mathbf{p} = \begin{bmatrix}
 \mathbf{r}_{0} \\\\
 \mathbf{r}_{1} \\\\
 \mathbf{r}_{2} \\\\
