@@ -25,11 +25,11 @@ where `Exec=/bin/sh /home/wumo/nvidia/NVIDIA-Nsight-Graphics-2020.3/host/linux-d
 
 # Solve ERR_NVGPUCTRPERM: Permission issue with Performance Counters
 
-Do as [ERR_NVGPUCTRPERM-permission-issue-performance-counters](https://developer.nvidia.com/nvidia-development-tools-solutions-ERR_NVGPUCTRPERM-permission-issue-performance-counters#SolnTag):
+Do as [ERR_NVGPUCTRPERM-permission-issue-performance-counters](https://developer.nvidia.com/nvidia-development-tools-solutions-ERR_NVGPUCTRPERM-permission-issue-performance-counters#SolnTag) suggests:
 
-Create `nsight.conf` in `/etc/modprobe.d` with content:
+1. Create `nsight.conf` in `/etc/modprobe.d` with content:
 ```
 options nvidia "NVreg_RestrictProfilingToAdminUsers=0
 ```
 
-Restart.
+2. Restart.
