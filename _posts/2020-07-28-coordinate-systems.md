@@ -212,6 +212,7 @@ $$ -\mathbf{r}_{3} \cdot \mathbf{p} \leq \mathbf{r}_{1} \cdot \mathbf{p} \leq  \
 $$ 0 \leq \mathbf{r}_{2} \cdot \mathbf{p} \leq  \mathbf{r}_{3} \cdot \mathbf{p}$$
 
 展开：
+
 $$ (\mathbf{r}_{3} + \mathbf{r}_{0}) \cdot \mathbf{p} \geq 0 $$
 $$ (\mathbf{r}_{3} - \mathbf{r}_{0}) \cdot \mathbf{p} \geq 0 $$
 $$ (\mathbf{r}_{3} + \mathbf{r}_{1}) \cdot \mathbf{p} \geq 0 $$
@@ -220,6 +221,7 @@ $$ \mathbf{r}_{2} \cdot \mathbf{p} \geq 0 $$
 $$ (\mathbf{r}_{3} - \mathbf{r}_{2}) \cdot \mathbf{p} \geq 0 $$
 
 得到Plane:
+
 $$ Left = \mathbf{r}_{3} + \mathbf{r}_{0} $$
 $$ Right = \mathbf{r}_{3} - \mathbf{r}_{0} $$
 $$ Bottom = \mathbf{r}_{3} + \mathbf{r}_{1} $$
