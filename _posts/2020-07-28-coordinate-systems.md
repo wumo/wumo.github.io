@@ -26,7 +26,7 @@ $$ \mathbf{T} = \begin{bmatrix}
 0 & 0 & 0 & 1
 \end{bmatrix} $$
 
-再加上相机的位置所需要的偏移，则最终的变换矩阵是：
+再加上相机的位置所需要的偏移（变换矩阵的最后一列表示的是位移），则最终的变换矩阵是：
 
 $$ \mathbf{T} = \begin{bmatrix}
 \mathbf{s}_{x} & \mathbf{u}_{x} & -\mathbf{f}_{x} & -\mathbf{L} \cdot \mathbf{s} \\\\
