@@ -185,7 +185,7 @@ $$ \mathbf{T}\mathbf{p} = \begin{bmatrix}
 \mathbf{r}_{1} \\\\
 \mathbf{r}_{2} \\\\
 \mathbf{r}_{3}
-\end{bmatrix} \mathbf{p}
+\end{bmatrix} \mathbf{p}^{T}
 = \begin{bmatrix}
 \mathbf{r}_{0} \cdot \mathbf{p} \\\\
 \mathbf{r}_{1} \cdot \mathbf{p} \\\\
