@@ -6,6 +6,8 @@ title:  GitHub Action日常用法
 
 对使用JNI进行动态链接库编译和链接的kotlin项目而言，其在JitPack上的发布便要麻烦得多，所以我们需要通过github action提前进行动态链接库的编译，并将编译好的动态链接库commit到repo的本身，如此在JitPack上的发布便十分简单，只不过为了不污染`master`分支的开发，编译好的动态链接库应该push到新的`ci`分支，然后创建基于`ci`分支的`release`以在JitPack上发布。
 
+<!--more-->
+
 workflow脚本范例如下：
 ```yml
 name: release
