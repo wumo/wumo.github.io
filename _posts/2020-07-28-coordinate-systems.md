@@ -35,5 +35,5 @@ $$ \begin{bmatrix}
 0 & 0 & 0 & 1
 \end{bmatrix} $$
 
-其中\\( (-\mathbf{L} \cdot \mathbf{s},-\mathbf{L} \cdot \mathbf{u},-\mathbf{L} \cdot \mathbf{-f}) \\)是相机位置\\( \mathbf{L} \\)在相机坐标系内表示后的反方向。
+其中\\( (-\mathbf{L} \cdot \mathbf{s},-\mathbf{L} \cdot \mathbf{u},-\mathbf{L} \cdot \mathbf{-f}) \\)是相机位置\\( \mathbf{L} \\)在相机坐标系内表示后的反方向向量(因为原世界坐标系在相机的观测坐标系内的位置就是沿着\\( -L \\)方向的)。
 
