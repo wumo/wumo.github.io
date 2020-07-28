@@ -1,5 +1,5 @@
 ---
-title: 坐标系和变换
+title: 坐标系和变换矩阵
 tags: 
 - graphics
 - vulkan
@@ -35,5 +35,15 @@ $$ \mathbf{T} = \begin{bmatrix}
 0 & 0 & 0 & 1
 \end{bmatrix} $$
 
-其中\\( \mathbf{L}'=(\mathbf{L} \cdot \mathbf{s},\mathbf{L} \cdot \mathbf{u},\mathbf{L} \cdot (\mathbf{-f})) \\)是相机位置\\( \mathbf{L} \\)在相机坐标系内的坐标，因为原世界坐标系原点在相机的观测坐标系内的位置就是沿着\\( -L \\)方向的，所以最终矩阵中的位移为\\( -\mathbf{L}' \\)。
+其中\\( \mathbf{L}'=(\mathbf{L} \cdot \mathbf{s},\mathbf{L} \cdot \mathbf{u},\mathbf{L} \cdot (\mathbf{-f})) \\)是相机位置\\( \mathbf{L} \\)在相机坐标系内的坐标，因为原世界坐标系原点在相机的观测坐标系内的位置就是沿着\\( -\mathbf{L} \\)方向的，所以最终矩阵中的位移为\\( -\mathbf{L}' \\)。
+
+# Projection Matrix
+
+投影矩阵将相机观测坐标系下的点映射到裁剪坐标系下的点，如下图所示：
+
+![image.png]({{ site.url }}/assets/images/proj_transform.png)
+
+坐标系\\( x,y,z \\) 表示相机观测坐标系，而左下角的\\( x',y',z' \\)则表示裁剪空间的坐标系，不同的图形API使用的裁剪空间可能不同，如Vulkan使用的就是图中的右手坐标系，OpenGL则是与图中的Y轴和Z轴相反的右手坐标系，DirectX是与图中的Z轴相反的左手坐标系。之后以Vulkan的裁剪空间坐标系为准。
+
+裁剪空间内点坐标取值在\\( [-1,1] \times [-1,1] \times [0,1] \\)范围内的将输出到屏幕。
 
