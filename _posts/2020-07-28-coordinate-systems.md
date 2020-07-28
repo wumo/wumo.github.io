@@ -161,7 +161,7 @@ $$ \mathbf{T'} = \mathbf{T}\mathbf{S}
 \frac{1}{ar \cdot \tan(\frac{\alpha}{2})} & 0  & 0  & 0 \\\\
 0 & \frac{1}{\tan(\frac{\alpha}{2})} & 0 & 0 \\\\
 0 & 0 & \frac{f}{f-n} & -\frac{f \cdot n}{f-n} \\\\
-0 & 0 & 0 & 1
+0 & 0 & 1 & 0
 \end{bmatrix} \begin{bmatrix}
 1 & 0  & 0  & 0 \\\\
 0 & -1 & 0  & 0 \\\\
