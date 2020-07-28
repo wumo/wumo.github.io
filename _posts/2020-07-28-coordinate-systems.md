@@ -97,7 +97,8 @@ $$ \mathbf{T'} = \mathbf{T}\mathbf{S}
 0 & 0 & 0 & 1
 \end{bmatrix} $$
 
-在考虑更一般的正射投影，只需增加一个平移项将裁剪盒移到Z轴中心即可：
+再考虑更一般的正射投影，只需增加一个平移项将裁剪盒移到Z轴中心即可：
+
 $$ \mathbf{T'} = \mathbf{T}\mathbf{S} 
 = \begin{bmatrix}
 \frac{2}{r-l} & 0  & 0  & 0 \\\\
@@ -118,3 +119,46 @@ $$ \mathbf{T'} = \mathbf{T}\mathbf{S}
 \end{bmatrix} $$
 
 ## 透视投影
+
+透视投影则以参数fov、宽高比、近点距离和远点距离定义的平截头体来进行投影，其投影矩阵的求解与正射投影类似，如下图所示：
+
+![image.png]({{ site.url }}/assets/images/perspective_proj.png)
+
+$$ \mathbf{T} = \begin{bmatrix}
+\frac{1}{ar \cdots \tan(\frac{\alpha}{2})} & 0  & 0  & 0 \\\\
+0 & \frac{1}{\tan(\frac{\alpha}{2})} & 0 & 0 \\\\
+0 & 0 & \frac{1}{f-n} & \frac{-n}{f-n} \\\\
+0 & 0 & 1 & 0
+\end{bmatrix} $$
+
+透视投影矩阵第四行第三列为1的原因是投影矩阵的计算需要除以z坐标值，无法直接用矩阵相乘表示，只能够通过将z坐标值保存在w坐标处，最后输出时除以w即可。
+
+而考虑到观测坐标系到裁剪坐标系的变换矩阵为:
+
+$$ \mathbf{S} =  \begin{bmatrix}
+1 & 0  & 0  & 0 \\\\
+0 & -1 & 0  & 0 \\\\
+0 & 0  & -1 & 0 \\\\
+0 & 0 & 0 & 1
+\end{bmatrix} $$
+
+则最终的投影矩阵为：
+
+$$ \mathbf{T'} = \mathbf{T}\mathbf{S} 
+= \begin{bmatrix}
+\frac{1}{ar \cdots \tan(\frac{\alpha}{2})} & 0  & 0  & 0 \\\\
+0 & \frac{1}{\tan(\frac{\alpha}{2})} & 0 & 0 \\\\
+0 & 0 & \frac{1}{f-n} & \frac{-n}{f-n} \\\\
+0 & 0 & 0 & 1
+\end{bmatrix} \begin{bmatrix}
+1 & 0  & 0  & 0 \\\\
+0 & -1 & 0  & 0 \\\\
+0 & 0  & -1 & 0 \\\\
+0 & 0 & 0 & 1
+\end{bmatrix} 
+= \begin{bmatrix}
+\frac{1}{ar \cdots \tan(\frac{\alpha}{2})} & 0  & 0  & 0 \\\\
+0 & -\frac{1}{\tan(\frac{\alpha}{2})} & 0 & 0 \\\\
+0 & 0 & -\frac{1}{f-n} & -\frac{-n}{f-n} \\\\
+0 & 0 & -1 & 0
+\end{bmatrix} $$
