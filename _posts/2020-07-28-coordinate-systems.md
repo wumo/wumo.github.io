@@ -17,7 +17,7 @@ tags:
 
 $$ \mathbf{p'} = \mathbf{T}\mathbf{p} $$
 
-令\\( \mathbf{f},\mathbf{s},\mathbf{u} \\)分别表示相机在世界坐标系下的前、右和上三个方向的单位向量，\\( \mathbf{L} \\)表示相机在世界坐标系的位置， \\( <\mathbf{s},\mathbf{u},-\mathbf{f}> \\)则组成了我们想要的坐标系，表示成矩阵则是：
+令\\( \mathbf{f},\mathbf{s},\mathbf{u} \\)分别表示相机在世界坐标系下的前、右和上三个方向的单位向量，\\( \mathbf{L} \\)表示相机在世界坐标系的位置， \\( <\mathbf{s},\mathbf{u},-\mathbf{f}> \\)则组成了我们想要的坐标系，表示成矩阵就是：
 
 $$ \mathbf{T} = \begin{bmatrix}
 \mathbf{s}_{x} & \mathbf{u}_{x} & -\mathbf{f}_{x} & 0 \\\\
@@ -26,14 +26,14 @@ $$ \mathbf{T} = \begin{bmatrix}
 0 & 0 & 0 & 1
 \end{bmatrix} $$
 
-再加上相机的位置所需要的偏移，则最终的变换矩阵就是：
+再加上相机的位置所需要的偏移，则最终的变换矩阵是：
 
 $$ \mathbf{T} = \begin{bmatrix}
 \mathbf{s}_{x} & \mathbf{u}_{x} & -\mathbf{f}_{x} & -\mathbf{L} \cdot \mathbf{s} \\\\
 \mathbf{s}_{y} & \mathbf{u}_{y} & -\mathbf{f}_{y} & -\mathbf{L} \cdot \mathbf{u} \\\\
-\mathbf{s}_{z} & \mathbf{u}_{z} & -\mathbf{f}_{z} & \mathbf{L} \cdot \mathbf{f} \\\\
+\mathbf{s}_{z} & \mathbf{u}_{z} & -\mathbf{f}_{z} & -\mathbf{L} \cdot (-\mathbf{f}) \\\\
 0 & 0 & 0 & 1
 \end{bmatrix} $$
 
-其中\\( L'=(\mathbf{L} \cdot \mathbf{s},\mathbf{L} \cdot \mathbf{u},\mathbf{L} \cdot \mathbf{-f}) \\)是相机位置\\( \mathbf{L} \\)在相机坐标系内的坐标，因为原世界坐标系原点在相机的观测坐标系内的位置就是沿着\\( -L \\)方向的，所以最终矩阵中的位移为\\( -L' \\)。
+其中\\( L'=(\mathbf{L} \cdot \mathbf{s},\mathbf{L} \cdot \mathbf{u},\mathbf{L} \cdot (\mathbf{-f})) \\)是相机位置\\( \mathbf{L} \\)在相机坐标系内的坐标，因为原世界坐标系原点在相机的观测坐标系内的位置就是沿着\\( -L \\)方向的，所以最终矩阵中的位移为\\( -L' \\)。
 
