@@ -32,3 +32,5 @@ $$ \begin{bmatrix}
 \mathbf{s}_{z} & \mathbf{u}_{z} & -\mathbf{f}_{z} & \mathbf{L} \cdot \mathbf{f} \\\\
 0 & 0 & 0 & 1
 \end{bmatrix} $$
+
+其中\\( (-\mathbf{L} \cdot \mathbf{s},-\mathbf{L} \cdot \mathbf{u},-\mathbf{L} \cdot \mathbf{-f}) \\)是相机位置\\( \mathbf{L} \\)在相机坐标系内表示后的反方向。
