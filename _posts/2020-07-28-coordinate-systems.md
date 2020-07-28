@@ -201,44 +201,38 @@ w'
 
 点在Frustum内的条件：
 
-$$ -1 \leq \frac{x'}{w'} \leq 1\$$
-
-$$ -1 \leq \frac{y'}{w'} \leq 1\$$
-
-$$ 0 \leq \frac{z'}{w'} \leq w\$$
+$$ \begin{multline}
+  -1 \leq \frac{x'}{w'} \leq 1 \\\\
+  -1 \leq \frac{y'}{w'} \leq 1 \\\\
+  0 \leq \frac{z'}{w'} \leq 1
+\end{multline} $$
 
 将条件用向量积表示：
 
-$$ -\mathbf{r}_{3} \cdot \mathbf{p} \leq \mathbf{r}_{0} \cdot \mathbf{p} \leq  \mathbf{r}_{3} \cdot \mathbf{p}$$
-
-$$ -\mathbf{r}_{3} \cdot \mathbf{p} \leq \mathbf{r}_{1} \cdot \mathbf{p} \leq  \mathbf{r}_{3} \cdot \mathbf{p}$$
-
-$$ 0 \leq \mathbf{r}_{2} \cdot \mathbf{p} \leq  \mathbf{r}_{3} \cdot \mathbf{p}$$
+$$ \begin{multline}
+-\mathbf{r}_{3} \cdot \mathbf{p} \leq \mathbf{r}_{0} \cdot \mathbf{p} \leq  \mathbf{r}_{3} \cdot \mathbf{p} \\\\
+-\mathbf{r}_{3} \cdot \mathbf{p} \leq \mathbf{r}_{1} \cdot \mathbf{p} \leq  \mathbf{r}_{3} \cdot \mathbf{p} \\\\
+0 \leq \mathbf{r}_{2} \cdot \mathbf{p} \leq  \mathbf{r}_{3} \cdot \mathbf{p}
+\end{multline} $$
 
 展开：
 
-$$ (\mathbf{r}_{3} + \mathbf{r}_{0}) \cdot \mathbf{p} \geq 0 $$
-
-$$ (\mathbf{r}_{3} - \mathbf{r}_{0}) \cdot \mathbf{p} \geq 0 $$
-
-$$ (\mathbf{r}_{3} + \mathbf{r}_{1}) \cdot \mathbf{p} \geq 0 $$
-
-$$ (\mathbf{r}_{3} - \mathbf{r}_{1}) \cdot \mathbf{p} \geq 0 $$
-
-$$ \mathbf{r}_{2} \cdot \mathbf{p} \geq 0 $$
-
-$$ (\mathbf{r}_{3} - \mathbf{r}_{2}) \cdot \mathbf{p} \geq 0 $$
+$$ \begin{multline}
+(\mathbf{r}_{3} + \mathbf{r}_{0}) \cdot \mathbf{p} \geq 0 \\\\
+(\mathbf{r}_{3} - \mathbf{r}_{0}) \cdot \mathbf{p} \geq 0 \\\\
+(\mathbf{r}_{3} + \mathbf{r}_{1}) \cdot \mathbf{p} \geq 0 \\\\
+(\mathbf{r}_{3} - \mathbf{r}_{1}) \cdot \mathbf{p} \geq 0 \\\\
+\mathbf{r}_{2} \cdot \mathbf{p} \geq 0 \\\\
+(\mathbf{r}_{3} - \mathbf{r}_{2}) \cdot \mathbf{p} \geq 0 
+\end{multline} $$
 
 得到Plane:
 
-$$ Left = \mathbf{r}_{3} + \mathbf{r}_{0} $$
-
-$$ Right = \mathbf{r}_{3} - \mathbf{r}_{0} $$
-
-$$ Bottom = \mathbf{r}_{3} + \mathbf{r}_{1} $$
-
-$$ Top = \mathbf{r}_{3} - \mathbf{r}_{1} $$
-
-$$ Near = \mathbf{r}_{2} $$
-
-$$ Far = \mathbf{r}_{3} - \mathbf{r}_{2} $$
+$$ \begin{multline}
+Left = \mathbf{r}_{3} + \mathbf{r}_{0} \\\\
+Right = \mathbf{r}_{3} - \mathbf{r}_{0} \\\\
+Bottom = \mathbf{r}_{3} + \mathbf{r}_{1} \\\\
+Top = \mathbf{r}_{3} - \mathbf{r}_{1} \\\\
+Near = \mathbf{r}_{2} \\\\
+Far = \mathbf{r}_{3} - \mathbf{r}_{2}
+\end{multline} $$
