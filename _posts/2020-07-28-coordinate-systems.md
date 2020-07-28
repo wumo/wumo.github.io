@@ -125,9 +125,9 @@ $$ \mathbf{T'} = \mathbf{T}\mathbf{S}
 ![image.png]({{ site.url }}/assets/images/perspective_proj.png)
 
 $$ \mathbf{T} = \begin{bmatrix}
-\frac{1}{ar \cdots \tan(\frac{\alpha}{2})} & 0  & 0  & 0 \\\\
+\frac{1}{ar \cdot \tan(\frac{\alpha}{2})} & 0  & 0  & 0 \\\\
 0 & \frac{1}{\tan(\frac{\alpha}{2})} & 0 & 0 \\\\
-0 & 0 & \frac{f}{f-n} & -\frac{f \cdots n}{f-n} \\\\
+0 & 0 & \frac{f}{f-n} & -\frac{f \cdot n}{f-n} \\\\
 0 & 0 & 1 & 0
 \end{bmatrix} $$
 
@@ -154,9 +154,9 @@ $$ \mathbf{S} =  \begin{bmatrix}
 
 $$ \mathbf{T'} = \mathbf{T}\mathbf{S} 
 = \begin{bmatrix}
-\frac{1}{ar \cdots \tan(\frac{\alpha}{2})} & 0  & 0  & 0 \\\\
+\frac{1}{ar \cdot \tan(\frac{\alpha}{2})} & 0  & 0  & 0 \\\\
 0 & \frac{1}{\tan(\frac{\alpha}{2})} & 0 & 0 \\\\
-0 & 0 & \frac{f}{f-n} & -\frac{f \cdots n}{f-n} \\\\
+0 & 0 & \frac{f}{f-n} & -\frac{f \cdot n}{f-n} \\\\
 0 & 0 & 0 & 1
 \end{bmatrix} \begin{bmatrix}
 1 & 0  & 0  & 0 \\\\
@@ -165,8 +165,8 @@ $$ \mathbf{T'} = \mathbf{T}\mathbf{S}
 0 & 0 & 0 & 1
 \end{bmatrix} 
 = \begin{bmatrix}
-\frac{1}{ar \cdots \tan(\frac{\alpha}{2})} & 0  & 0  & 0 \\\\
+\frac{1}{ar \cdot \tan(\frac{\alpha}{2})} & 0  & 0  & 0 \\\\
 0 & -\frac{1}{\tan(\frac{\alpha}{2})} & 0 & 0 \\\\
-0 & 0 & -\frac{f}{f-n} & -\frac{f \cdots n}{f-n} \\\\
+0 & 0 & -\frac{f}{f-n} & -\frac{f \cdot n}{f-n} \\\\
 0 & 0 & -1 & 0
 \end{bmatrix} $$
