@@ -9,6 +9,8 @@ tags:
 
 将世界坐标转换到相机的观测坐标系，如下图所示：
 
+$$ \mathbf{p'} = \mathbf{T}\mathbf{p} $$
+
 ![image.png]({{ site.url }}/assets/images/view_transform.png)
 
 坐标系\\( x,y,z \\) 表示世界坐标系，而右下角的\\( x',y',z' \\)则表示相机的坐标系，相机坐标系xyz分别对应相机的右、上、后等方向。
@@ -34,3 +36,4 @@ $$ \begin{bmatrix}
 \end{bmatrix} $$
 
 其中\\( (-\mathbf{L} \cdot \mathbf{s},-\mathbf{L} \cdot \mathbf{u},-\mathbf{L} \cdot \mathbf{-f}) \\)是相机位置\\( \mathbf{L} \\)在相机坐标系内表示后的反方向。
+
