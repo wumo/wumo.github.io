@@ -11,6 +11,7 @@ tags:
 
 ![image.png]({{ site.url }}/assets/images/view_transform.png)
 
+<!--more-->
 坐标系\\( x,y,z \\) 表示世界坐标系，而右下角的\\( x',y',z' \\)则表示相机的坐标系，相机坐标系xyz分别对应相机的右、上、后等方向。
 
 观测矩阵就是将世界坐标系中的点\\( p(a,b,c,d) \\)变换到观测坐标系中的\\( p'(a',b',c',d') \\)。
@@ -53,7 +54,32 @@ $$ \mathbf{T} = \begin{bmatrix}
 
 正射投影将裁剪坐标系下在\\( [l,r] \times [b,t] \times [n,f] \\)范围内的点映射到\\( [-1,1] \times [-1,1] \times [0,1] \\)，其中\\( l \\)表示裁剪盒最左边的x坐标，\\( r \\)表示裁剪盒最右边的x坐标，\\( b \\)表示裁剪盒最底部的y坐标，\\( t \\)表示裁剪盒最上边的y坐标，\\( n \\)表示裁剪盒最前边的z坐标，\\( f \\)表示裁剪盒最后边的z坐标。
 
+首先考虑裁剪盒以z轴为中心的正射投影，如下图所示为Y-Z平面图：
+
+![image.png]({{ site.url }}/assets/images/ortho_proj.png)
+
+其中\\( w \\)为裁剪盒的宽度，\\( h \\)为裁剪盒的高度，容易计算得到投影矩阵为：
+
 $$ \mathbf{T} = \begin{bmatrix}
+\frac{2}{w} & 0  & 0  & 0 \\\\
+0 & \frac{2}{h} & 0 & 0 \\\\
+0 & 0 & \frac{1}{f-n} & \frac{-n}{f-n} \\\\
+0 & 0 & 0 & 1
+\end{bmatrix} $$
+
+而考虑到观测坐标系到裁剪坐标系的变换矩阵为:
+
+$$ \mathbf{S} =  \begin{bmatrix}
+1 & 0  & 0  & 0 \\\\
+0 & -1 & 0  & 0 \\\\
+0 & 0  & -1 & 0 \\\\
+0 & 0 & 0 & 1
+\end{bmatrix} $$
+
+则最终的投影矩阵为：
+
+$$ \mathbf{T'} = \mathbf{T}\mathbf{S} 
+= \begin{bmatrix}
 \frac{2}{w} & 0  & 0  & 0 \\\\
 0 & \frac{2}{h} & 0 & 0 \\\\
 0 & 0 & \frac{1}{f-n} & \frac{-n}{f-n} \\\\
@@ -63,7 +89,32 @@ $$ \mathbf{T} = \begin{bmatrix}
 0 & -1 & 0  & 0 \\\\
 0 & 0  & -1 & 0 \\\\
 0 & 0 & 0 & 1
+\end{bmatrix} 
+= \begin{bmatrix}
+\frac{2}{w} & 0  & 0  & 0 \\\\
+0 & -\frac{2}{h} & 0 & 0 \\\\
+0 & 0 & -\frac{1}{f-n} & -\frac{-n}{f-n} \\\\
+0 & 0 & 0 & 1
 \end{bmatrix} $$
 
+在考虑更一般的正射投影，只需增加一个平移项将裁剪盒移到Z轴中心即可：
+$$ \mathbf{T'} = \mathbf{T}\mathbf{S} 
+= \begin{bmatrix}
+\frac{2}{r-l} & 0  & 0  & 0 \\\\
+0 & \frac{2}{t-b} & 0 & 0 \\\\
+0 & 0 & \frac{1}{f-n} & \frac{-n}{f-n} \\\\
+0 & 0 & 0 & 1
+\end{bmatrix} \begin{bmatrix}
+1 & 0  & 0  & -\frac{l+r}{2} \\\\
+0 & -1 & 0  & -\frac{b+t}{2} \\\\
+0 & 0  & -1 & 0 \\\\
+0 & 0 & 0 & 1
+\end{bmatrix} 
+= \begin{bmatrix}
+\frac{2}{w} & 0  & 0  & -\frac{l+r}{r-l} \\\\
+0 & -\frac{2}{h} & 0 & -\frac{b+t}{t-b} \\\\
+0 & 0 & -\frac{1}{f-n} & -\frac{-n}{f-n} \\\\
+0 & 0 & 0 & 1
+\end{bmatrix} $$
 
 ## 透视投影
