@@ -35,5 +35,5 @@ $$ \mathbf{T} = \begin{bmatrix}
 0 & 0 & 0 & 1
 \end{bmatrix} $$
 
-其中\\( L'=(\mathbf{L} \cdot \mathbf{s},\mathbf{L} \cdot \mathbf{u},\mathbf{L} \cdot (\mathbf{-f})) \\)是相机位置\\( \mathbf{L} \\)在相机坐标系内的坐标，因为原世界坐标系原点在相机的观测坐标系内的位置就是沿着\\( -L \\)方向的，所以最终矩阵中的位移为\\( -L' \\)。
+其中\\( \mathbf{L}'=(\mathbf{L} \cdot \mathbf{s},\mathbf{L} \cdot \mathbf{u},\mathbf{L} \cdot (\mathbf{-f})) \\)是相机位置\\( \mathbf{L} \\)在相机坐标系内的坐标，因为原世界坐标系原点在相机的观测坐标系内的位置就是沿着\\( -L \\)方向的，所以最终矩阵中的位移为\\( -\mathbf{L}' \\)。
 
