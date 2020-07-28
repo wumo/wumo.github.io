@@ -127,7 +127,7 @@ $$ \mathbf{T'} = \mathbf{T}\mathbf{S}
 $$ \mathbf{T} = \begin{bmatrix}
 \frac{1}{ar \cdots \tan(\frac{\alpha}{2})} & 0  & 0  & 0 \\\\
 0 & \frac{1}{\tan(\frac{\alpha}{2})} & 0 & 0 \\\\
-0 & 0 & \frac{1}{f-n} & \frac{-n}{f-n} \\\\
+0 & 0 & \frac{f}{f-n} & -\frac{f \cdots n}{f-n} \\\\
 0 & 0 & 1 & 0
 \end{bmatrix} $$
 
@@ -148,7 +148,7 @@ $$ \mathbf{T'} = \mathbf{T}\mathbf{S}
 = \begin{bmatrix}
 \frac{1}{ar \cdots \tan(\frac{\alpha}{2})} & 0  & 0  & 0 \\\\
 0 & \frac{1}{\tan(\frac{\alpha}{2})} & 0 & 0 \\\\
-0 & 0 & \frac{1}{f-n} & \frac{-n}{f-n} \\\\
+0 & 0 & \frac{f}{f-n} & -\frac{f \cdots n}{f-n} \\\\
 0 & 0 & 0 & 1
 \end{bmatrix} \begin{bmatrix}
 1 & 0  & 0  & 0 \\\\
@@ -159,6 +159,6 @@ $$ \mathbf{T'} = \mathbf{T}\mathbf{S}
 = \begin{bmatrix}
 \frac{1}{ar \cdots \tan(\frac{\alpha}{2})} & 0  & 0  & 0 \\\\
 0 & -\frac{1}{\tan(\frac{\alpha}{2})} & 0 & 0 \\\\
-0 & 0 & -\frac{1}{f-n} & -\frac{-n}{f-n} \\\\
+0 & 0 & -\frac{f}{f-n} & -\frac{f \cdots n}{f-n} \\\\
 0 & 0 & -1 & 0
 \end{bmatrix} $$
