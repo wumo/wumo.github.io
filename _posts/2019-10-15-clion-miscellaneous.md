@@ -18,7 +18,7 @@ If you use snap to install clion, then the `clion_clion.desktop` file can be fou
 Edit the field `Exec` as follows:
 
 ```
-Exec=/bin/sh /snap/clion/114/bin/clion.sh
+Exec=/bin/sh /snap/clion/current/bin/clion.sh
 ```
 In such way, the clion will be started with all environment variables inherited.
 <!--more-->
