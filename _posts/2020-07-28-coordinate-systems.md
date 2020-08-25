@@ -32,7 +32,7 @@ $$
 
 再加上相机的位置所需要的偏移（变换矩阵的最后一列表示的是位移），则最终的变换矩阵是：
 
-$$ 
+$$
 \mathbf{T} = \begin{bmatrix}
 \mathbf{s}_{x} & \mathbf{u}_{x} & -\mathbf{f}_{x} & -\mathbf{L} \cdot \mathbf{s} \\\\
 \mathbf{s}_{y} & \mathbf{u}_{y} & -\mathbf{f}_{y} & -\mathbf{L} \cdot \mathbf{u} \\\\
@@ -65,7 +65,7 @@ $$
 
 其中$ w $为裁剪盒的宽度，$ h $为裁剪盒的高度，容易计算得到投影矩阵为：
 
-$$ 
+$$
 \mathbf{T} = \begin{bmatrix}
 \frac{2}{w} & 0  & 0  & 0 \\\\
 0 & \frac{2}{h} & 0 & 0 \\\\
@@ -87,7 +87,7 @@ $$
 
 则最终的投影矩阵为：
 
-$$ 
+$$
 \mathbf{T'} = \mathbf{T}\mathbf{S} 
 = \begin{bmatrix}
 \frac{2}{w} & 0  & 0  & 0 \\\\
@@ -110,7 +110,7 @@ $$
 
 再考虑更一般的正射投影，只需增加一个平移项将裁剪盒移到Z轴中心即可：
 
-$$ 
+$$
 \mathbf{T'} = \mathbf{T}\mathbf{S} 
 = \begin{bmatrix}
 \frac{2}{r-l} & 0  & 0  & 0 \\\\
@@ -137,13 +137,13 @@ $$
 
 ![image.png]({{ site.url }}/assets/images/perspective_proj.png)
 
-$$ 
+$$
 \mathbf{T} = \begin{bmatrix}
 \frac{1}{ar \cdot \tan(\frac{\alpha}{2})} & 0  & 0  & 0 \\\\
 0 & \frac{1}{\tan(\frac{\alpha}{2})} & 0 & 0 \\\\
 0 & 0 & \frac{f}{f-n} & -\frac{f \cdot n}{f-n} \\\\
 0 & 0 & 1 & 0
-\end{bmatrix} 
+\end{bmatrix}
 $$
 
 第三行由下面这个方程计算得到
@@ -162,7 +162,7 @@ $$ B = -\frac{f \cdot n}{f-n} $$
 
 而考虑到观测坐标系到裁剪坐标系的变换矩阵为:
 
-$$ 
+$$
 \mathbf{S} =  \begin{bmatrix}
 1 & 0  & 0  & 0 \\\\
 0 & -1 & 0  & 0 \\\\
@@ -173,7 +173,7 @@ $$
 
 则最终的投影矩阵为：
 
-$$ 
+$$
 \mathbf{T'} = \mathbf{T}\mathbf{S} 
 = \begin{bmatrix}
 \frac{1}{ar \cdot \tan(\frac{\alpha}{2})} & 0  & 0  & 0 \\\\
@@ -196,9 +196,87 @@ $$
 
 > 依据约定的不同可能需要重新计算相关坐标系下的各种变换矩阵。
 
+# 从NDC还原到世界坐标
+
+NDC(normalized device coordinate)经由下面的公式计算得到：
+
+$$
+\begin{gather}
+\begin{bmatrix}
+x' \\\\
+y' \\\\
+z' \\\\
+w'
+\end{bmatrix} = \mathbf{P_{roj}V_{iew}}\begin{bmatrix}
+x \\\\
+y \\\\
+z \\\\
+1
+\end{bmatrix} \\\\
+\begin{bmatrix}
+x'' \\\\
+y'' \\\\
+z'' \\\\
+1
+\end{bmatrix} = \frac{1}{w'}\begin{bmatrix}
+x' \\\\
+y' \\\\
+z' \\\\
+w'
+\end{bmatrix}
+\end{gather}
+$$
+
+其中$[x'',y'',z'',1]$则是NDC。而一般$\mathbf{P_{roj}V_{iew}}$都是可逆的，所以可以通过相乘$(\mathbf{P_{roj}V_{iew}})^{-1}$来还原NDC到其世界坐标：
+
+$$
+\begin{gather}
+\begin{bmatrix}
+x''' \\\\
+y''' \\\\
+z''' \\\\
+w'''
+\end{bmatrix} = (\mathbf{P_{roj}V_{iew}})^{-1}\begin{bmatrix}
+x'' \\\\
+y'' \\\\
+z'' \\\\
+1
+\end{bmatrix} = (\mathbf{P_{roj}V_{iew}})^{-1}\frac{1}{w'}\begin{bmatrix}
+x' \\\\
+y' \\\\
+z' \\\\
+w'
+\end{bmatrix} = \frac{1}{w'}(\mathbf{P_{roj}V_{iew}})^{-1}\begin{bmatrix}
+x' \\\\
+y' \\\\
+z' \\\\
+w'
+\end{bmatrix} = \frac{1}{w'}\begin{bmatrix}
+x \\\\
+y \\\\
+z \\\\
+1
+\end{bmatrix} \\\\
+\implies w''' = \frac{1}{w'} \\\\
+\implies \begin{bmatrix}
+x \\\\
+y \\\\
+z \\\\
+1
+\end{bmatrix} = \frac{1}{w'''}\begin{bmatrix}
+x''' \\\\
+y''' \\\\
+z''' \\\\
+w'''
+\end{bmatrix} 
+\end{gather}
+$$
+
+即，先通过NDC $[x'',y'',z'',1]$左乘$(\mathbf{P_{roj}V_{iew}})^{-1}$得到$[x''',y''',z''',w''']$，然后除以$w'''$得到世界坐标$[\frac{x'''}{w'''},\frac{y'''}{w'''},\frac{z'''}{w'''},1]$
+
 # Frustum Plane
 
-$$ 
+$$
 \mathbf{T}\mathbf{p}^{T} = \begin{bmatrix}
 \mathbf{r}_{0} \\\\
 \mathbf{r}_{1} \\\\
@@ -211,27 +289,21 @@ $$
 \mathbf{r}_{2} \cdot \mathbf{p} \\\\
 \mathbf{r}_{3} \cdot \mathbf{p}
 \end{bmatrix} 
-= \begin{bmatrix}
-x' \\\\
-y' \\\\
-z' \\\\
-w'
-\end{bmatrix} 
 $$
 
 点在Frustum内的条件：
 
-$$ 
+$$
 \begin{gather}
   -1 \leq \frac{x'}{w'} \leq 1 \\\\
   -1 \leq \frac{y'}{w'} \leq 1 \\\\
   0 \leq \frac{z'}{w'} \leq 1
-\end{gather} 
+\end{gather}
 $$
 
 将条件用向量积表示：
 
-$$ 
+$$
 \begin{gather}
 -\mathbf{r}_{3} \cdot \mathbf{p} \leq \mathbf{r}_{0} \cdot \mathbf{p} \leq  \mathbf{r}_{3} \cdot \mathbf{p} \\\\
 -\mathbf{r}_{3} \cdot \mathbf{p} \leq \mathbf{r}_{1} \cdot \mathbf{p} \leq  \mathbf{r}_{3} \cdot \mathbf{p} \\\\
@@ -254,7 +326,7 @@ $$
 
 得到Plane:
 
-$$ 
+$$
 \begin{gather}
 Left = \mathbf{r}_{3} + \mathbf{r}_{0} \\\\
 Right = \mathbf{r}_{3} - \mathbf{r}_{0} \\\\
