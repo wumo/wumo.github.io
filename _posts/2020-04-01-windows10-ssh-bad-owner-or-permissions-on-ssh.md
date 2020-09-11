@@ -33,7 +33,7 @@ Remove-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 Remove-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 ```
 
-* 或者安装`OpenSSH`
+* 之后你如果想重装`OpenSSH`
 
 ```powershell
 # Install the OpenSSH Client
@@ -54,3 +54,5 @@ RestartNeeded : False
 ```powershell
 scoop install openssh
 ```
+
+修改`GIT_SSH`环境变量到对应的`ssh.exe`。

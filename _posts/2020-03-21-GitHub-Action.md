@@ -134,6 +134,25 @@ jobs:
 * `build-linux`配置编译环境，将编译好的so上传至`linux-resources`，
 * `commit-release`在`build-windows`和`build-linux`完成后，下载相应的`artifact`，然后commit、release到`ci`分支。
 
+## 从gradle获取项目version并创建对应的release
+
+下面的命令通过运行gradle命令获取version属性存入环境变量`PROJECT_VERSION`中，再使用`actions/create-release`脚本进行发布。
+
+```kotlin
+- name: Get release version
+  run: |
+    chmod +x gradlew
+    echo ::set-env name=PROJECT_VERSION::$(./gradlew properties -q | grep "version:" | awk '{print $2}')
+- name: Release
+  uses: actions/create-release@v1
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  with:
+    tag_name: ${{ env.PROJECT_VERSION }}
+    release_name: ${{ env.PROJECT_VERSION }}
+    commitish: ci
+```
+
 # 多个repo之间的github action同步
 
 ## Master Repo和Slave Repo同步
