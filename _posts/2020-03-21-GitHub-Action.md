@@ -138,10 +138,51 @@ jobs:
 
 下面的命令通过运行gradle命令获取version属性存入环境变量`PROJECT_VERSION`中，再使用`actions/create-release`脚本进行发布。
 
-```kotlin
+```yml
 - name: Get release version
   run: |
     chmod +x gradlew
+    echo ::set-env name=PROJECT_VERSION::$(./gradlew properties -q | grep "version:" | awk '{print $2}')
+- name: Release
+  uses: actions/create-release@v1
+  env:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  with:
+    tag_name: ${{ env.PROJECT_VERSION }}
+    release_name: ${{ env.PROJECT_VERSION }}
+    commitish: ci
+```
+
+## gralde使用axion-release-plugin自动版本升级release
+
+`build.gradle.kts`配置：
+
+```kotlin
+// build.gradle.kts
+plugins{
+  id("pl.allegro.tech.build.axion-release") version "1.12.0"
+}
+scmVersion {
+  // 符合jitpack对release的要求
+  tag.apply {
+    prefix = ""
+  }
+  checks.apply {
+    uncommittedChanges = false
+    aheadOfRemote = false
+    snapshotDependencies = false
+  }
+}
+version = scmVersion.version
+```
+
+`github workflow`配置：
+
+```yaml
+- name: Get release version
+  run: |
+    chmod +x gradlew
+    ./gradlew createRelease
     echo ::set-env name=PROJECT_VERSION::$(./gradlew properties -q | grep "version:" | awk '{print $2}')
 - name: Release
   uses: actions/create-release@v1
